@@ -5,6 +5,7 @@ $(window).on("load", function () {
 });
 
 
+
 jQuery($=> {
     "use strict";
     let $window = $(window);
@@ -116,3 +117,19 @@ jQuery($=> {
 });
 
 AOS.init();
+
+$(document).keyup(function (e) {
+    if (e.keyCode === 27) {
+        close_video();
+    }
+});
+
+$(document).ready(function () {
+
+    [...document.querySelectorAll('.first-column')].map(column => {
+        column.style.setProperty('--animation', 'slide');
+        column.style.setProperty('height', '200%');
+        column.innerHTML = column.innerHTML + column.innerHTML;
+    });
+
+});
